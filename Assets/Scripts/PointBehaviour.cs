@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class PointBehaviour : MonoBehaviour
 {
 	public bool activated = false;
+	public enum GoalType {Goal, SubGoal};
+	public GoalType GoalTypes;
+
     [SerializeField]
     private int _Ammo = 3;
     [SerializeField]
@@ -35,7 +38,7 @@ public class PointBehaviour : MonoBehaviour
         ammoLabel = GetComponentInChildren<Text>();
         Ammo = _Ammo;
 
-        if (!activated)
+		if (!activated & ammoLabel)
             ammoLabel.enabled = false;
         else
             activate();
