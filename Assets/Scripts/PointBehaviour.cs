@@ -59,7 +59,9 @@ public class PointBehaviour : MonoBehaviour
 		{
 			Debug.Log ("i have shields!");
 			shields.disableShield ();
-			return;
+
+			if(shields.activeShields > 0)
+				return;
 		}
 
 		activated = true;
