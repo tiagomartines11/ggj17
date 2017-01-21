@@ -21,10 +21,17 @@ public class RangeBehaviour : MonoBehaviour {
 
     void OnMouseEnter()
     {
-        rangeSprite.transform.localScale = new Vector3(pointBehaviour.Range * 2, pointBehaviour.Range * 2, 0);
+        if (enabled)
+            rangeSprite.transform.localScale = new Vector3(pointBehaviour.Range * 2, pointBehaviour.Range * 2, 0);
     }
 
     void OnMouseExit()
+    {
+        if (enabled)
+            rangeSprite.transform.localScale = new Vector3(0, 0, 0);
+    }
+
+    void OnDisable()
     {
         rangeSprite.transform.localScale = new Vector3(0, 0, 0);
     }

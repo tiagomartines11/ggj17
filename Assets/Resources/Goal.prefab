@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 0
-  isGoal: 0
+  Type: 1
   _Ammo: 3
   _Range: 3
 --- !u!114 &114676987552089860

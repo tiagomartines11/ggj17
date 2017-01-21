@@ -58,5 +58,6 @@ public class ShieldBehaviour : MonoBehaviour {
     void OnDisable()
     {
         GameObject.Destroy(shieldContainer);
+        enabled = false;
     }
 }

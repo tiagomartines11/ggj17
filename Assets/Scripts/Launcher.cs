@@ -47,12 +47,9 @@ public class Launcher : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		if (point.activated && point.Ammo > 0) {
-			launch ();
-			point.Ammo -= 1;
-
-			if(point.Ammo == 0)
-				GameObject.Destroy (aimContainer);
+        if (point.activated && point.Ammo > 0) {
+            launch();
+            point.Ammo -= 1;
 		}
 	}
 
@@ -71,7 +68,13 @@ public class Launcher : MonoBehaviour {
 
 	}
 
-	void launch()
+    void OnDisable()
+    {
+        GameObject.Destroy(aimContainer);
+        enabled = false;
+    }
+
+    void launch()
 	{
         //		Collider2D [] colliders = Physics2D.OverlapCircleAll(this.transform.position, 1f);
         //		if(colliders.Length > 0)
