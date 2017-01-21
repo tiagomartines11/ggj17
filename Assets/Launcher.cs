@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class Launcher : MonoBehaviour {
 
-	public int numProjectiles = 3;
+	public int[] projectileAngles;
 	public float range = 0.5f;
-	int activeAngle = 0;
-
-	ArrayList angleList = [];
+	float activeAngle = 0.0f;
 
 	GameObject aimContainer;
 
@@ -16,10 +14,9 @@ public class Launcher : MonoBehaviour {
 	void Start () {
 		activeAngle = 0;
 
-		int cumulativeAngle = 0;
 		aimContainer = new GameObject ();
 
-		for (int i = 0; i < numProjectiles; i++) {
+		foreach (int angle in projectileAngles) {
 			GameObject container = new GameObject ();
 
 			GameObject instance = Instantiate (Resources.Load ("aimprefab", typeof(GameObject))) as GameObject;
@@ -29,11 +26,8 @@ public class Launcher : MonoBehaviour {
 
 			container.transform.localPosition = new Vector3 (0, 0, 0);
 
-			int angle = 360 / numProjectiles;
-			cumulativeAngle += angle;
-
 			Quaternion rot = new Quaternion ();
-			rot.eulerAngles = new Vector3 (0, 0, cumulativeAngle);
+			rot.eulerAngles = new Vector3 (0, 0, angle);
 			container.transform.rotation = rot;
 
 			instance.transform.localPosition = new Vector3 (1.0f, 0, 0);
@@ -52,7 +46,7 @@ public class Launcher : MonoBehaviour {
 	void Update () {
 
 		if (activeAngle < 360)
-			activeAngle += 5;
+			activeAngle += 0.5f;
 		else
 			activeAngle = 0;
 		
@@ -65,20 +59,22 @@ public class Launcher : MonoBehaviour {
 
 	void launch()
 	{
-//		Collider2D [] colliders = Physics2D.OverlapCircleAll(this.transform.position, 1f);
-//		if(colliders.Length > 0)
-//		{
-//			// enemies within 1m of the player
-//			Debug.Log(colliders.Length);
-//
-//			Mathf.Sin(
-//		};
+        //		Collider2D [] colliders = Physics2D.OverlapCircleAll(this.transform.position, 1f);
+        //		if(colliders.Length > 0)
+        //		{
+        //			// enemies within 1m of the player
+        //			Debug.Log(colliders.Length);
+        //
+        //			Mathf.Sin(
+        //		};
 
 
-		for (int i = 0; i < numProjectiles; i++) {
-			GameObject projectile = Instantiate (Resources.Load ("Projectile", typeof(GameObject))) as GameObject;
-			projectile.GetComponent<Projectile> ().SetupProjectile (range, activeAngle);
+        foreach (int angle in projectileAngles)
+        {
+            GameObject projectile = Instantiate (Resources.Load ("Projectile", typeof(GameObject))) as GameObject;
+			projectile.GetComponent<Projectile> ().SetupProjectile (range, activeAngle + angle);
 			projectile.transform.parent = this.transform;
+            projectile.transform.localPosition = Vector3.zero;
 
 		}
 

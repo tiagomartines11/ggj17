@@ -16,7 +16,7 @@ public class PointBehaviour : MonoBehaviour
         set
         {
             _Ammo = value;
-            ammoLabel.text = Ammo.ToString();
+            if(ammoLabel) ammoLabel.text = Ammo.ToString();
         }
     }
 
