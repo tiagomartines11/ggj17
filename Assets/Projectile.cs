@@ -5,8 +5,8 @@ using UnityEngine;
 public class Projectile : MonoBehaviour {
 	float pRange;
 	float pAngle;
-
 	float pSpeed = 0.1f;
+
 	Vector3 dir;
 
 	// Use this for initialization
@@ -29,6 +29,22 @@ public class Projectile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		this.transform.position = this.transform.position + pSpeed * dir;
+		this.transform.localPosition = this.transform.localPosition + pSpeed * dir;
+
+
+		if (this.transform.localPosition.magnitude >= pRange) {
+			Debug.Log (this.transform.localPosition.magnitude);
+			GameObject.Destroy (gameObject);
+		}
+	}
+
+	void OnCollisionEnter2D(Collision2D collision) {
+
+		if (collision.gameObject != this.transform.parent.gameObject) {
+			if (collision.gameObject.layer == LayerMask.NameToLayer("Eletron")) {
+				GameObject.Destroy (gameObject);
+				collision.gameObject.GetComponent<PointBehaviour> ().activate ();
+			}
+		}
 	}
 }

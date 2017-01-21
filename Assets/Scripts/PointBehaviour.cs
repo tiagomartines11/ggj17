@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PointBehaviour : MonoBehaviour
 {
+	public bool activated = false;
     [SerializeField]
     private int _Ammo = 3;
     [SerializeField]
@@ -33,7 +34,23 @@ public class PointBehaviour : MonoBehaviour
     {
         ammoLabel = GetComponentInChildren<Text>();
         Ammo = _Ammo;
+
+		if (!activated)
+			ammoLabel.enabled = false;
+		else
+			gameObject.GetComponent<Launcher> ().enabled = true;
     }
+
+	public void activate()
+	{
+		if (activated)
+			return;
+
+		activated = true;
+		ammoLabel.enabled = true;
+
+		gameObject.GetComponent<Launcher> ().enabled = true;
+	}
 
     // Update is called once per frame
     void Update()

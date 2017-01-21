@@ -5,14 +5,22 @@ using UnityEngine;
 public class Launcher : MonoBehaviour {
 
 	public int[] projectileAngles;
-	public float range = 0.5f;
+	public float range;
 	float activeAngle = 0.0f;
+	private PointBehaviour point;
+
 
 	GameObject aimContainer;
 
 	// Use this for initialization
 	void Start () {
+
+		///save references
+		point = gameObject.GetComponent<PointBehaviour>();
+
+		///code
 		activeAngle = 0;
+		range = point.Range;
 
 		aimContainer = new GameObject ();
 
@@ -39,7 +47,8 @@ public class Launcher : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		launch ();
+		if(point.activated)
+			launch ();
 	}
 
 	// Update is called once per frame
