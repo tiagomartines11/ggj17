@@ -50,6 +50,9 @@ public class Launcher : MonoBehaviour {
 		if (point.activated && point.Ammo > 0) {
 			launch ();
 			point.Ammo -= 1;
+
+			if(point.Ammo == 0)
+				GameObject.Destroy (aimContainer);
 		}
 	}
 
