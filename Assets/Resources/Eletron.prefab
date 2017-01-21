@@ -87,10 +87,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4527304167851488}
   - component: {fileID: 58602758080357008}
+  - component: {fileID: 50806512652208892}
   - component: {fileID: 114017826060821682}
   - component: {fileID: 114538403697907560}
   - component: {fileID: 114535472519520342}
-  - component: {fileID: 50806512652208892}
   - component: {fileID: 114069754133618856}
   m_Layer: 9
   m_Name: Eletron
@@ -270,13 +270,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileAngles: 00000000
   range: 3
+  angularSpeed: 2
 --- !u!114 &114538403697907560
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1916192702512168}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6db27768297c0ed4e8c98f9f8305cc8c, type: 3}
   m_Name: 

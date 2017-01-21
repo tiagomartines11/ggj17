@@ -10,14 +10,14 @@ public class ShieldBehaviour : MonoBehaviour {
 
     float activeAngle = 0.0f;
 
-    GameObject aimContainer;
+    GameObject shieldContainer;
 
     // Use this for initialization
     void Start()
     {
         activeAngle = 0;
 
-        aimContainer = new GameObject();
+        shieldContainer = new GameObject();
 
         foreach (int angle in shieldAngles)
         {
@@ -26,7 +26,7 @@ public class ShieldBehaviour : MonoBehaviour {
             GameObject instance = Instantiate(Resources.Load("Shield", typeof(GameObject))) as GameObject;
 
             instance.transform.parent = container.transform;
-            container.transform.parent = aimContainer.transform;
+            container.transform.parent = shieldContainer.transform;
 
             container.transform.localPosition = new Vector3(0, 0, 0);
 
@@ -37,8 +37,8 @@ public class ShieldBehaviour : MonoBehaviour {
             instance.transform.localPosition = new Vector3(shieldDistance, 0, 0);
         }
 
-        aimContainer.transform.parent = this.transform;
-        aimContainer.transform.localPosition = new Vector3(0, 0, 0);
+        shieldContainer.transform.parent = this.transform;
+        shieldContainer.transform.localPosition = new Vector3(0, 0, 0);
 
     }
 
@@ -52,6 +52,11 @@ public class ShieldBehaviour : MonoBehaviour {
 
         Quaternion rot = new Quaternion();
         rot.eulerAngles = new Vector3(0, 0, activeAngle);
-        aimContainer.transform.rotation = rot;
+        shieldContainer.transform.rotation = rot;
+    }
+
+    void OnDisable()
+    {
+        GameObject.Destroy(shieldContainer);
     }
 }

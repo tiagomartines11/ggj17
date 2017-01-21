@@ -35,27 +35,32 @@ public class PointBehaviour : MonoBehaviour
         ammoLabel = GetComponentInChildren<Text>();
         Ammo = _Ammo;
 
-		if (!activated)
-			ammoLabel.enabled = false;
-		else
-			gameObject.GetComponent<Launcher> ().enabled = true;
+        if (!activated)
+            ammoLabel.enabled = false;
+        else
+            activate();
     }
 		
 
 	public void activate()
 	{
-		if (activated)
-			return;
-
 		activated = true;
 		ammoLabel.enabled = true;
 
-		gameObject.GetComponent<Launcher> ().enabled = true;
-	}
+        gameObject.GetComponent<Launcher>().enabled = true;
+        gameObject.GetComponent<RangeBehaviour>().enabled = true;
+        gameObject.GetComponent<ShieldBehaviour>().enabled = false;
+    }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, Range);
     }
 }
