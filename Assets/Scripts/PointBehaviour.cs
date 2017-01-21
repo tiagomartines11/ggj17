@@ -49,14 +49,27 @@ public class PointBehaviour : MonoBehaviour
     }
 
 
+
     public void activate()
     {
-        activated = true;
-        ammoLabel.enabled = true;
+		///check if shields
+		ShieldHPBehaviour shields = gameObject.GetComponent<ShieldHPBehaviour> ();
+
+		if (shields.activeShields > 0) 
+		{
+			Debug.Log ("i have shields!");
+			shields.disableShield ();
+			return;
+		}
+
+		activated = true;
+
+		ammoLabel.enabled = true;
 
         gameObject.GetComponent<Launcher>().enabled = true;
         gameObject.GetComponent<RangeBehaviour>().enabled = true;
         gameObject.GetComponent<ShieldBehaviour>().enabled = false;
+		gameObject.GetComponent<ShieldHPBehaviour>().enabled = false;
     }
 
     public void deactivate()

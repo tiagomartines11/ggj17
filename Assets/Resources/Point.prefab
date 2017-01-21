@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 114538403697907560}
   - component: {fileID: 114535472519520342}
   - component: {fileID: 114069754133618856}
+  - component: {fileID: 114478213890744358}
   m_Layer: 9
   m_Name: Point
   m_TagString: Untagged
@@ -187,7 +188,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 0
+<<<<<<< Updated upstream:Assets/Resources/Point.prefab
   Type: 0
+=======
+  GoalTypes: 0
+>>>>>>> Stashed changes:Assets/Resources/Eletron.prefab
   _Ammo: 3
   _Range: 3
 --- !u!114 &114060934100541374
@@ -257,7 +262,23 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
+<<<<<<< Updated upstream:Assets/Resources/Point.prefab
   m_Text: 
+=======
+  m_Text: 3
+--- !u!114 &114478213890744358
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1916192702512168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e44ed78d4d524d56b7cf08101e927a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numShields: 0
+>>>>>>> Stashed changes:Assets/Resources/Eletron.prefab
 --- !u!114 &114535472519520342
 MonoBehaviour:
   m_ObjectHideFlags: 1
