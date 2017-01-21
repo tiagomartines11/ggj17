@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShieldBehaviour : MonoBehaviour {
 
-    public int[] shieldAngles = { 1 };
+    public int[] shieldAngles = { 90 };
     public float angularSpeed = 1.5f;
     public float shieldDistance = 1.5f;
 
