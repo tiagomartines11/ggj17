@@ -8,7 +8,7 @@ public class Launcher : MonoBehaviour {
 	public float range;
 	float activeAngle = 0.0f;
 	private PointBehaviour point;
-
+	public float angularSpeed = 2.0f;
 
 	GameObject aimContainer;
 
@@ -47,15 +47,17 @@ public class Launcher : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		if(point.activated)
+		if (point.activated && point.Ammo > 0) {
 			launch ();
+			point.Ammo -= 1;
+		}
 	}
 
 	// Update is called once per frame
 	void Update () {
 
 		if (activeAngle < 360)
-			activeAngle += 0.5f;
+			activeAngle += angularSpeed;
 		else
 			activeAngle = 0;
 		

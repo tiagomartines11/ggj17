@@ -40,6 +40,7 @@ public class PointBehaviour : MonoBehaviour
 		else
 			gameObject.GetComponent<Launcher> ().enabled = true;
     }
+		
 
 	public void activate()
 	{
