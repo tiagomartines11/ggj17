@@ -187,6 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 0
+  Type: 0
   _Ammo: 3
   _Range: 3
 --- !u!114 &114060934100541374
@@ -256,7 +257,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: 
 --- !u!114 &114535472519520342
 MonoBehaviour:
   m_ObjectHideFlags: 1

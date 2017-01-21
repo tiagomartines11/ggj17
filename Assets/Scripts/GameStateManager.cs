@@ -32,13 +32,11 @@ public class GameStateManager : MonoBehaviour
 
         foreach (var goal in goals)
         {
-            Debug.Log("G" + goal.activated);
             if (!goal.activated) { allGoals = false; break; }
         }
 
         foreach (var point in points)
         {
-            Debug.Log("P"+ point.Ammo);
             if (point.Ammo > 0 && point.activated) { hasAmmo = true; break; }
         }
 

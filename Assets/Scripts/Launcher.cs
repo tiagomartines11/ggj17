@@ -64,8 +64,6 @@ public class Launcher : MonoBehaviour {
 		Quaternion rot = new Quaternion ();
 		rot.eulerAngles = new Vector3 (0, 0, activeAngle);
 		aimContainer.transform.rotation = rot;
-
-
 	}
 
     void OnDisable()
