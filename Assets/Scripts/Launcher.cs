@@ -37,7 +37,7 @@ public class Launcher : MonoBehaviour {
 			rot.eulerAngles = new Vector3 (0, 0, angle);
 			container.transform.rotation = rot;
 
-			instance.transform.localPosition = new Vector3 (1.0f, 0, 0);
+			instance.transform.localPosition = new Vector3 (aimDistance, 0, 0);
 		}
 
 		aimContainer.transform.parent = this.transform;
@@ -46,7 +46,7 @@ public class Launcher : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-        if (point.activated && point.Ammo > 0) {
+        if (enabled && point.activated && point.Ammo > 0) {
             launch();
             point.Ammo -= 1;
 		}
@@ -86,7 +86,7 @@ public class Launcher : MonoBehaviour {
         foreach (int angle in projectileAngles)
         {
             GameObject projectile = Instantiate (Resources.Load ("Projectile", typeof(GameObject))) as GameObject;
-			projectile.GetComponent<Projectile> ().SetupProjectile (aimDistance, activeAngle + angle);
+			projectile.GetComponent<Projectile> ().SetupProjectile (point.Range, activeAngle + angle);
 			projectile.transform.parent = this.transform;
             projectile.transform.localPosition = Vector3.zero;
 
