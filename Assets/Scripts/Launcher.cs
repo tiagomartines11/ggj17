@@ -5,7 +5,7 @@ using UnityEngine;
 public class Launcher : MonoBehaviour {
 
 	public int[] projectileAngles;
-	public float range;
+	public float aimDistance = 3;
 	float activeAngle = 0.0f;
 	private PointBehaviour point;
 	public float angularSpeed = 2.0f;
@@ -20,7 +20,6 @@ public class Launcher : MonoBehaviour {
 
 		///code
 		activeAngle = 0;
-		range = point.Range;
 
 		aimContainer = new GameObject ();
 
@@ -87,7 +86,7 @@ public class Launcher : MonoBehaviour {
         foreach (int angle in projectileAngles)
         {
             GameObject projectile = Instantiate (Resources.Load ("Projectile", typeof(GameObject))) as GameObject;
-			projectile.GetComponent<Projectile> ().SetupProjectile (range, activeAngle + angle);
+			projectile.GetComponent<Projectile> ().SetupProjectile (aimDistance, activeAngle + angle);
 			projectile.transform.parent = this.transform;
             projectile.transform.localPosition = Vector3.zero;
 

@@ -189,7 +189,7 @@ MonoBehaviour:
   activated: 0
   Type: 0
   _Ammo: 3
-  _Range: 3
+  _Range: 5
 --- !u!114 &114060934100541374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb05891a9475d246a899c505b32c2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldAngles: 01000000
+  shieldAngles: 00000000
   angularSpeed: 1.5
   shieldDistance: 1.5
 --- !u!114 &114457186557752126
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileAngles: 00000000
-  range: 3
+  aimDistance: 3
   angularSpeed: 2
 --- !u!114 &114538403697907560
 MonoBehaviour:
