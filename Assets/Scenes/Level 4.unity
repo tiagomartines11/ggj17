@@ -190,11 +190,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1496998092818514, guid: ea845041db9bec74eb3f09502d310a23, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1971543929833548, guid: ea845041db9bec74eb3f09502d310a23, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea845041db9bec74eb3f09502d310a23, type: 2}
@@ -368,6 +368,11 @@ Prefab:
       propertyPath: activated
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114535472519520342, guid: 9d9b63e23de064dd789fe6a85789fb5d,
+        type: 2}
+      propertyPath: projectileAngles.Array.data[0]
+      value: 225
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d9b63e23de064dd789fe6a85789fb5d, type: 2}
   m_IsPrefabParent: 0
@@ -501,6 +506,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114535472519520342, guid: 9d9b63e23de064dd789fe6a85789fb5d,
+        type: 2}
+      propertyPath: projectileAngles.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4527304167851488, guid: 9d9b63e23de064dd789fe6a85789fb5d, type: 2}
       propertyPath: m_LocalPosition.x
       value: -2.11
@@ -546,6 +556,21 @@ Prefab:
         type: 2}
       propertyPath: _Ammo
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114535472519520342, guid: 9d9b63e23de064dd789fe6a85789fb5d,
+        type: 2}
+      propertyPath: angularSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114535472519520342, guid: 9d9b63e23de064dd789fe6a85789fb5d,
+        type: 2}
+      propertyPath: projectileAngles.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114535472519520342, guid: 9d9b63e23de064dd789fe6a85789fb5d,
+        type: 2}
+      propertyPath: projectileAngles.Array.data[1]
+      value: 250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d9b63e23de064dd789fe6a85789fb5d, type: 2}
@@ -689,7 +714,7 @@ Prefab:
     - target: {fileID: 114535472519520342, guid: 9d9b63e23de064dd789fe6a85789fb5d,
         type: 2}
       propertyPath: angularSpeed
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d9b63e23de064dd789fe6a85789fb5d, type: 2}
@@ -746,6 +771,11 @@ Prefab:
         type: 2}
       propertyPath: activated
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114535472519520342, guid: 9d9b63e23de064dd789fe6a85789fb5d,
+        type: 2}
+      propertyPath: projectileAngles.Array.data[0]
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d9b63e23de064dd789fe6a85789fb5d, type: 2}
