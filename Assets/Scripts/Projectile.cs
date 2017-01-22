@@ -14,6 +14,8 @@ public class Projectile : MonoBehaviour {
 	void Start () {
 		
 		audioController = GameObject.FindObjectOfType<AudioController> ();
+
+        audioController.playShot();
 	}
 
 	public void SetupProjectile(float range, float angle)

@@ -200,12 +200,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgm: {fileID: 8300000, guid: 85caff5b901fbaa4b96484ed6abb4a67, type: 3}
-  buttonSound: {fileID: 8300000, guid: 7428c71bb36592b449b1d41c326813d0, type: 3}
-  scoreSound: {fileID: 8300000, guid: 7600a975cc457a84c9322a962a369500, type: 3}
-  goalSound: {fileID: 8300000, guid: 66a0e52fdf2a6f2469b5f0c726239a91, type: 3}
-  starSound: {fileID: 8300000, guid: 69eda669466293f4abe17d1d205ca415, type: 3}
-  shieldDestroy: {fileID: 8300000, guid: 2f445fb9d83f60c4a91e29df2e48cd8c, type: 3}
-  shieldHit: {fileID: 8300000, guid: 7ea1b846de54fe043a85cba8cde65808, type: 3}
+  buttonSound: {fileID: 8300000, guid: 2eb0bf8668ecf5744bba5d199b20da50, type: 3}
+  scoreSound: {fileID: 8300000, guid: ef115c51c9dcffc4396f1654adebadaa, type: 3}
+  goalSound: {fileID: 8300000, guid: cbe2e3d1814643c438f15eb4b0f5d4fe, type: 3}
+  starSound: {fileID: 8300000, guid: 3bb651e3daef2ae4f8ed62918b3a7709, type: 3}
+  shieldDestroy: {fileID: 8300000, guid: 17fb56bb125c85b43a47601203b7772d, type: 3}
+  shieldHit: {fileID: 8300000, guid: 7037b370176a36d4e817129c366550a5, type: 3}
+  shot: {fileID: 8300000, guid: 1df400483e6fa414abace83000496638, type: 3}
 --- !u!4 &706689325
 Transform:
   m_ObjectHideFlags: 0

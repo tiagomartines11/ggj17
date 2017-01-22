@@ -10,9 +10,10 @@ public class AudioController : MonoBehaviour {
 	public AudioClip goalSound;
 	public AudioClip starSound;
 	public AudioClip shieldDestroy;
-	public AudioClip shieldHit;
+    public AudioClip shieldHit;
+    public AudioClip shot;
 
-	AudioSource fxSound;
+    AudioSource fxSound;
 
 	void Awake() {
 		DontDestroyOnLoad(transform.gameObject);
@@ -49,13 +50,17 @@ public class AudioController : MonoBehaviour {
 		fxSound.PlayOneShot (shieldDestroy);
 	}
 
-	public void playShieldHit()
-	{
-		fxSound.PlayOneShot (shieldHit);
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    public void playShieldHit()
+    {
+        fxSound.PlayOneShot(shieldHit);
+    }
+    public void playShot()
+    {
+        fxSound.PlayOneShot(shot);
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }
