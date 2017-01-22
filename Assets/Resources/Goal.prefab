@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activated: 0
   Type: 1
+  activeSprite: {fileID: 21300000, guid: 08720eda10dab45509c470f6620e7010, type: 3}
   _Ammo: 3
   _Range: 3
 --- !u!114 &114676987552089860
@@ -167,7 +168,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5cb0bac0827f4ad46a84b2b25d2d525a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e30a15f4779424e8cb551fa3c4459aa4, type: 3}
   m_Color: {r: 0.90344834, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
