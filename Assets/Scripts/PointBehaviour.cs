@@ -22,6 +22,8 @@ public class PointBehaviour : MonoBehaviour
 	AudioController audioController;
     public Sprite activeSprite;
 
+    public bool ChainReaction = false;
+
     [SerializeField]
     private int _Ammo = 3;
     [SerializeField]
@@ -33,8 +35,12 @@ public class PointBehaviour : MonoBehaviour
         set
         {
             _Ammo = value;
-            if(ammoLabel) ammoLabel.text = Ammo.ToString();
-            if (_Ammo == 0) deactivate();
+            if (ammoLabel) ammoLabel.text = Ammo.ToString();
+            if (_Ammo == 0)
+            {
+                deactivate();
+                ammoLabel.text = "";
+            }
         }
     }
 
@@ -95,6 +101,17 @@ public class PointBehaviour : MonoBehaviour
 		baseObject.GetComponent<SpriteRenderer> ().sprite = activeSprite;
 
         gameObject.transform.Find("Base").GetComponent<Collider2D>().enabled = false;
+
+        if (ChainReaction)
+            StartCoroutine(AutoFire(0.01f));
+    }
+
+    IEnumerator AutoFire(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        Ammo -= 1;
+        gameObject.GetComponent<Launcher>().launch();
     }
 
     public void deactivate()

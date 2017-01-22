@@ -73,7 +73,7 @@ public class Launcher : MonoBehaviour {
         enabled = false;
     }
 
-    void launch()
+    public void launch()
 	{
         //		Collider2D [] colliders = Physics2D.OverlapCircleAll(this.transform.position, 1f);
         //		if(colliders.Length > 0)
