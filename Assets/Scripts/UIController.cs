@@ -16,7 +16,23 @@ public class UIController : MonoBehaviour {
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Gameplay", LoadSceneMode.Single);
+        SceneManager.LoadScene("Level1", LoadSceneMode.Single);
+    }
+
+    public void Advance()
+    {
+        var current = SceneManager.GetActiveScene().name;
+        if (current == "Level1")
+            SceneManager.LoadScene("Level2", LoadSceneMode.Single);
+        else if (current == "Level2")
+            SceneManager.LoadScene("Level3", LoadSceneMode.Single);
+        else
+            SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
     }
 
     public void EndGame()
