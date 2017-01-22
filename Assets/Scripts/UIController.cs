@@ -14,7 +14,7 @@ public class UIController : MonoBehaviour
 		"Olsen Twins not real twins (not even sisters)",
 		"Switzerland is not real",
 		"Gayvolution confirmed! 'We knew this was going to happen!'",
-		"140 year-old woman says 'the secret is esating only olive oil'",
+		"140 year-old woman says 'the secret is eating only butter'",
 		"Yoga found out to be a form of satanic worship in disguise",
 		"Kim Kardashian is actually Taylor Swift's BFF",
 		"Kim Kardashian pregnant and calling her new son 'Wild West'",
