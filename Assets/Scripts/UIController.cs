@@ -19,6 +19,19 @@ public class UIController : MonoBehaviour
         "Donald Trump May Secretly Be Melania Trump In Disguise",
     };
 
+	string[] histories = new string[] {
+		"article1",
+		"article2",
+		"article3",
+		"article4",
+		"article5",
+		"article6",
+		"article7",
+		"article8",
+		"article9",
+		"article10",
+	};
+
     // Use this for initialization
     void Start()
     {
