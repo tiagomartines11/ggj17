@@ -77,6 +77,7 @@ public class PointBehaviour : MonoBehaviour
 		GameObject baseObject = this.gameObject.transform.Find ("Base").gameObject;
 		baseObject.GetComponent<SpriteRenderer> ().sprite = activeSprite;
 
+        gameObject.transform.Find("Base").GetComponent<Collider2D>().enabled = false;
     }
 
     public void deactivate()
@@ -85,7 +86,6 @@ public class PointBehaviour : MonoBehaviour
         
         gameObject.GetComponent<Launcher>().enabled = false;
         gameObject.GetComponent<RangeBehaviour>().enabled = false;
-        gameObject.GetComponent<Collider2D>().enabled = false;
     }
 
     // Update is called once per frame
