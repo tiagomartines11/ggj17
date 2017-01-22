@@ -99,11 +99,11 @@ public class UIController : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void SetupEndScreen(bool isWin, int goalScore, int subGoalScore)
+    public void SetupEndScreen(bool isWin, int goalScore, int totalGoals, int subGoalScore, int totalSubGoals)
     {
         Transform which = gameObject.transform.Find(isWin ? "Win" : "Lose");
-        which.Find("goalScore").GetComponent<Text>().text = goalScore.ToString();
-        which.Find("subGoalScore").GetComponent<Text>().text = subGoalScore.ToString();
+        which.Find("goalScore").GetComponent<Text>().text = goalScore + "/" + totalGoals;
+        which.Find("subGoalScore").GetComponent<Text>().text = subGoalScore + "/" + totalSubGoals;
         which.gameObject.SetActive(true);
         gameObject.transform.Find("HUD").gameObject.SetActive(false);
 
