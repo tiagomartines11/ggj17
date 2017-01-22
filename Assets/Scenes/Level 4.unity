@@ -555,7 +555,7 @@ Prefab:
     - target: {fileID: 114017826060821682, guid: 9d9b63e23de064dd789fe6a85789fb5d,
         type: 2}
       propertyPath: _Ammo
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114535472519520342, guid: 9d9b63e23de064dd789fe6a85789fb5d,
         type: 2}
