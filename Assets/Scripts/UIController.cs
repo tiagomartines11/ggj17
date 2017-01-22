@@ -49,14 +49,10 @@ public class UIController : MonoBehaviour
             }
 
             var current = SceneManager.GetActiveScene().name;
-            if (current == "Level1")
-                labelLevel.text = "- Level 01 -";
-            else if (current == "Level2")
-                labelLevel.text = "- Level 02 -";
-            else
-                labelLevel.text = "- Level 03 -";
-
+            labelLevel.text = "- " + current + " -";
             labelFlavor.text = "\"" + flavors[curStory] + "\"";
+
+            gameObject.transform.Find("HUD").Find("Text").GetComponent<Text>().text = SceneManager.GetActiveScene().name;
         }
     }
 
@@ -67,7 +63,7 @@ public class UIController : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Level1", LoadSceneMode.Single);
+        SceneManager.LoadScene("Level 1", LoadSceneMode.Single);
     }
 
     public void StartLevel()
@@ -79,12 +75,12 @@ public class UIController : MonoBehaviour
     public void Advance()
     {
         var current = SceneManager.GetActiveScene().name;
-        if (current == "Level1")
-            SceneManager.LoadScene("Level2", LoadSceneMode.Single);
-        else if (current == "Level2")
-            SceneManager.LoadScene("Level3", LoadSceneMode.Single);
-        else
+        int currentId = System.Int32.Parse(current.Replace("Level", ""));
+        currentId++;
+        if (currentId >= 10)
             SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+        else
+            SceneManager.LoadScene("Level "+currentId, LoadSceneMode.Single);
     }
 
     public void Restart()
