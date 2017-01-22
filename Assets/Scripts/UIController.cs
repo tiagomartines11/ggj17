@@ -9,16 +9,17 @@ public class UIController : MonoBehaviour
 	AudioController audioController;
 
     string[] flavors = new string[] {
-        "Olsen Twins Aren't Twins",
-        "Azealia Banks Is Actually White",
-        "Kim Kardashian Is Pregnant And Will Call Her Son 'Wild West'",
-        "Madonna Reveals That Lady Gaga Is Her Clone",
-        "Ellen Throws A Man Out Of The Studio Coz He's Straight",
-        "After 'Ellen' Incident, Gay Insurrection Is On The Rise",
-        "Sia Found Captive At Beyoncé's Basement",
-        "Beyoncé Found Captive At Sia's Basement",
-        "Kim Kardashian Is Taylor Swift Bff",
-        "Donald Trump May Secretly Be Melania Trump In Disguise",
+		"Sia Found Captive At Beyoncé's Basement",
+        "Scientists discover Vitamin C actually gives you cancer!",
+		"Olsen Twins not real twins (not even sisters)",
+		"Switzerland is not real",
+		"Gayvolution confirmed! 'We knew this was going to happen!'",
+		"140 year-old woman says 'the secret is esating only olive oil'",
+		"Yoga found out to be a form of satanic worship in disguise",
+		"Kim Kardashian is actually Taylor Swift's BFF",
+		"Kim Kardashian pregnant and calling her new son 'Wild West'",
+		"Madonna reveals that Lady Gaga is her clone",
+		"Donald Trump may secretely be Melania in disguise"
     };
 
 	string[] histories = new string[] {
@@ -32,6 +33,7 @@ public class UIController : MonoBehaviour
 		"article8",
 		"article9",
 		"article10",
+		"article11"
 	};
 
     // Use this for initialization
@@ -89,11 +91,16 @@ public class UIController : MonoBehaviour
         if (audioController) audioController.playButton ();
         var current = SceneManager.GetActiveScene().name;
         int currentId = System.Int32.Parse(current.Replace("Level", ""));
+
+		PlayerPrefs.DeleteKey("curStory");
+		PlayerPrefs.Save();
+
         currentId++;
         if (currentId >= 10)
             SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
         else
             SceneManager.LoadScene("Level "+currentId, LoadSceneMode.Single);
+		
     }
 
     public void Restart()
@@ -122,7 +129,7 @@ public class UIController : MonoBehaviour
 		if (isWin) {
 			GameObject article = which.Find("articleWin").gameObject;
 
-			Sprite newArticle = Resources.Load<Sprite>(histories[PlayerPrefs.GetInt("curStory", 0)]);
+			Sprite newArticle = Resources.Load<Sprite>("articles/"+histories[PlayerPrefs.GetInt("curStory", 0)]);
 
 			article.GetComponent<Image> ().overrideSprite = newArticle;
 		}
