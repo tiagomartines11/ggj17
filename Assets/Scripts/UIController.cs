@@ -35,27 +35,29 @@ public class UIController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
-        var labelLevel = transform.Find("Start").GetChild(0).Find("LevelLabel").GetComponent<Text>();
-        var labelFlavor = transform.Find("Start").GetChild(0).Find("FlavorText").GetComponent<Text>();
-
-        var curStory = PlayerPrefs.GetInt("curStory", -1);
-        if (curStory == -1)
+        if (transform.Find("Start"))
         {
-            curStory = Random.Range(0, flavors.Length);
-            PlayerPrefs.SetInt("curStory", curStory);
-            PlayerPrefs.Save();
+            var labelLevel = transform.Find("Start").GetChild(0).Find("LevelLabel").GetComponent<Text>();
+            var labelFlavor = transform.Find("Start").GetChild(0).Find("FlavorText").GetComponent<Text>();
+
+            var curStory = PlayerPrefs.GetInt("curStory", -1);
+            if (curStory == -1)
+            {
+                curStory = Random.Range(0, flavors.Length);
+                PlayerPrefs.SetInt("curStory", curStory);
+                PlayerPrefs.Save();
+            }
+
+            var current = SceneManager.GetActiveScene().name;
+            if (current == "Level1")
+                labelLevel.text = "- Level 01 -";
+            else if (current == "Level2")
+                labelLevel.text = "- Level 02 -";
+            else
+                labelLevel.text = "- Level 03 -";
+
+            labelFlavor.text = "\"" + flavors[curStory] + "\"";
         }
-
-        var current = SceneManager.GetActiveScene().name;
-        if (current == "Level1")
-            labelLevel.text = "- Level 01 -";
-        else if (current == "Level2")
-            labelLevel.text = "- Level 02 -";
-        else
-            labelLevel.text = "- Level 03 -";
-
-        labelFlavor.text = "\"" + flavors[curStory] + "\"";
     }
 
     // Update is called once per frame

@@ -33,7 +33,7 @@ public class Projectile : MonoBehaviour {
 
 
 		if (this.transform.localPosition.magnitude >= pRange) {
-			Debug.Log (this.transform.localPosition.magnitude);
+			//Debug.Log (this.transform.localPosition.magnitude);
 			GameObject.Destroy (gameObject);
             GameObject.FindObjectOfType<GameStateManager>().UpdateGameState();
 

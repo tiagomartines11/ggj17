@@ -28,7 +28,7 @@ public class ShieldHPBehaviour : MonoBehaviour {
 			shields.Add (instance);
 
             transform.Find("Base").gameObject.GetComponent<CircleCollider2D> ().radius += scaleValue;
-            Debug.Log ("create shield");
+            //Debug.Log ("create shield");
 		}
 	}
 	
@@ -39,7 +39,7 @@ public class ShieldHPBehaviour : MonoBehaviour {
 
 	public void disableShield()
 	{
-		Debug.Log (activeShields);
+		//Debug.Log (activeShields);
 		GameObject obj = (shields [activeShields-1]) as GameObject;
 		shields.RemoveAt (activeShields-1);
 		GameObject.Destroy(obj);

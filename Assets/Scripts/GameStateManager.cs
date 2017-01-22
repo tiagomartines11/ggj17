@@ -64,14 +64,14 @@ public class GameStateManager : MonoBehaviour
 
         if (goalsC >= goals.Count)
         {
-            Debug.Log("WON");
+            //Debug.Log("WON");
             uiController.SetupEndScreen(true, goalsC, goals.Count, subgoalsC, subgoals.Count);
             return;
         }
 
         if (!hasAmmo)
         {
-            Debug.Log("LOST");
+            //Debug.Log("LOST");
             uiController.SetupEndScreen(false, goalsC, goals.Count, subgoalsC, subgoals.Count);
             return;
         }
