@@ -38,18 +38,17 @@ public class Projectile : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter2D(Collision2D collision) {
+	void OnCollisionEnter2D(Collision2D collision)
+    {
 
-		if (collision.gameObject != this.transform.parent.gameObject) {
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Eletron"))
-            {
-                GameObject.Destroy(gameObject);
-                collision.gameObject.GetComponent<PointBehaviour>().activate();
-            }
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Shield"))
-            {
-                GameObject.Destroy(gameObject);
-            }
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Eletron") && collision.transform.parent.gameObject.layer != transform.parent.gameObject.layer)
+        {
+            GameObject.Destroy(gameObject);
+            collision.gameObject.GetComponent<PointBehaviour>().activate();
         }
-	}
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Shield"))
+        {
+            GameObject.Destroy(gameObject);
+        }
+    }
 }
