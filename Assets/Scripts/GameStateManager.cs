@@ -7,6 +7,7 @@ public class GameStateManager : MonoBehaviour
 {
 
     private List<PointBehaviour> goals, subgoals, points;
+    private EndGameBehavior endGame;
 
     // Use this for initialization
     void Start()
@@ -23,6 +24,7 @@ public class GameStateManager : MonoBehaviour
             if (allPoints[i].Type == PointBehaviour.PointTypes.Point) points.Add(allPoints[i]);
         }
 
+        endGame = GetComponent<EndGameBehavior>();
     }
 
     public void Update()
@@ -43,12 +45,14 @@ public class GameStateManager : MonoBehaviour
         if (allGoals)
         {
             Debug.Log("WON");
+            endGame.SetupScreen(true, 1, 1);
             return;
         }
 
         if (!hasAmmo)
         {
             Debug.Log("LOST");
+            endGame.SetupScreen(false, 1, 1);
             return;
         }
     }

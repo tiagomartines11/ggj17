@@ -10,10 +10,12 @@ public class EndGameBehavior : MonoBehaviour {
 		
 	}
 
-	public void SetupScreen(bool isWin, int goalScore, int subGoalScore)
-	{
-		gameObject.transform.Find("goalScore").GetComponent<Text>().text = goalScore.ToString();
-		gameObject.transform.Find("subGoalScore").GetComponent<Text>().text = subGoalScore.ToString();
+    public void SetupScreen(bool isWin, int goalScore, int subGoalScore)
+    {
+        Transform which = gameObject.transform.Find(isWin ? "Win" : "Lose");
+        which.Find("goalScore").GetComponent<Text>().text = goalScore.ToString();
+        which.Find("subGoalScore").GetComponent<Text>().text = subGoalScore.ToString();
+        which.gameObject.SetActive(true);
 	}
 	
 	// Update is called once per frame
