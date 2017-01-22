@@ -72,6 +72,7 @@ public class PointBehaviour : MonoBehaviour
         gameObject.GetComponent<RangeBehaviour>().enabled = true;
         gameObject.GetComponent<ShieldBehaviour>().enabled = false;
 		gameObject.GetComponent<ShieldHPBehaviour>().enabled = false;
+        gameObject.transform.Find("Base").GetComponent<Collider2D>().enabled = false;
     }
 
     public void deactivate()
@@ -80,7 +81,6 @@ public class PointBehaviour : MonoBehaviour
         
         gameObject.GetComponent<Launcher>().enabled = false;
         gameObject.GetComponent<RangeBehaviour>().enabled = false;
-        gameObject.GetComponent<Collider2D>().enabled = false;
     }
 
     // Update is called once per frame
