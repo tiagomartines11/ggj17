@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Linq;
 
 public class GameStateManager : MonoBehaviour
@@ -8,6 +9,12 @@ public class GameStateManager : MonoBehaviour
 
     private List<PointBehaviour> goals, subgoals, points;
     private UIController uiController;
+
+    public Sprite HudGoalTexture;
+    public Sprite HudSubGoalTexture;
+
+    private Transform goalsPanel;
+    private Transform subGoalsPanel;
 
     // Use this for initialization
     void Start()
@@ -24,17 +31,27 @@ public class GameStateManager : MonoBehaviour
             if (allPoints[i].Type == PointBehaviour.PointTypes.Point) points.Add(allPoints[i]);
         }
 
+        goalsPanel = transform.Find("HUD").Find("PanelGoals");
+        subGoalsPanel = transform.Find("HUD").Find("PanelSubGoals");
+        for (int i = 0; i < goals.Count; i++) goalsPanel.GetChild(i).gameObject.SetActive(true);
+        for (int i = 0; i < subgoals.Count; i++) subGoalsPanel.GetChild(i).gameObject.SetActive(true);
         uiController = GetComponent<UIController>();
     }
 
     public void UpdateGameState()
     {
-        bool allGoals = true;
+        int goalsC = 0;
+        int subgoalsC = 0;
         bool hasAmmo = false;
 
         foreach (var goal in goals)
         {
-            if (!goal.activated) { allGoals = false; break; }
+            if (goal.activated) goalsC++;
+        }
+
+        foreach (var goal in subgoals)
+        {
+            if (goal.activated) subgoalsC++;
         }
 
         foreach (var point in points)
@@ -42,7 +59,10 @@ public class GameStateManager : MonoBehaviour
             if (point.Ammo > 0 && point.activated) { hasAmmo = true; break; }
         }
 
-        if (allGoals)
+        for (int i = 0; i < goalsC; i++) goalsPanel.GetChild(i).gameObject.GetComponent<Image>().sprite = HudGoalTexture;
+        for (int i = 0; i < subgoalsC; i++) subGoalsPanel.GetChild(i).gameObject.GetComponent<Image>().sprite = HudSubGoalTexture;
+
+        if (goalsC >= goals.Count)
         {
             Debug.Log("WON");
             uiController.SetupEndScreen(true, 1, 1);
