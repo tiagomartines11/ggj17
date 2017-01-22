@@ -420,7 +420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1500100976815986
 GameObject:
   m_ObjectHideFlags: 1
@@ -867,7 +867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4563829210082620
 Transform:
   m_ObjectHideFlags: 1
@@ -1251,7 +1251,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Your story disappeared as fast as it appeared.
+  m_Text: Uh-oh. We did make it front page, though.
 --- !u!114 &114273233406289918
 MonoBehaviour:
   m_ObjectHideFlags: 1
