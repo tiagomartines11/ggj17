@@ -6,7 +6,7 @@ public class ShieldHPBehaviour : MonoBehaviour {
 
 	public int numShields;
 	public int activeShields;
-	float scaleValue = 0.1f;
+	float scaleValue = 0.2f;
 
 	ArrayList shields;
 

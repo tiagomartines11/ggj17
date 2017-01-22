@@ -172,7 +172,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -204,6 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activated: 1
   Type: 0
+  activeSprite: {fileID: 21300000, guid: 404cbb0587551435391ce9e5d22c2276, type: 3}
   _Ammo: 3
   _Range: 5
 --- !u!114 &114060934100541374
@@ -286,7 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileAngles: 00000000
-  aimDistance: 1
+  aimDistance: 1.5
   angularSpeed: 2
 --- !u!114 &114538403697907560
 MonoBehaviour:
@@ -394,7 +395,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5cb0bac0827f4ad46a84b2b25d2d525a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f9536d1baf62f4135bf2307db78c85c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

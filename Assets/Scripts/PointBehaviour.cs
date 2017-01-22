@@ -8,6 +8,7 @@ public class PointBehaviour : MonoBehaviour
 	public bool activated = false;
 	public enum PointTypes {Point, Goal, SubGoal};
 	public PointTypes Type;
+	public Sprite activeSprite;
 
     [SerializeField]
     private int _Ammo = 3;
@@ -72,6 +73,10 @@ public class PointBehaviour : MonoBehaviour
         gameObject.GetComponent<RangeBehaviour>().enabled = true;
         gameObject.GetComponent<ShieldBehaviour>().enabled = false;
 		gameObject.GetComponent<ShieldHPBehaviour>().enabled = false;
+
+		GameObject baseObject = this.gameObject.transform.Find ("Base").gameObject;
+		baseObject.GetComponent<SpriteRenderer> ().sprite = activeSprite;
+
     }
 
     public void deactivate()
