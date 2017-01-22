@@ -7,16 +7,17 @@ public class PointBehaviour : MonoBehaviour
 {
     static Dictionary<PointVoiceGroup, string[]> voices = new Dictionary<PointVoiceGroup, string[]>()
                 {
-                    { PointVoiceGroup.Normal, new string[] {"Nice one!", "HAHA!", "Wow :O"}},
-                    { PointVoiceGroup.Skeptical, new string[] {"Not a chance!", "You're kidding!"}},
-                    { PointVoiceGroup.Believer, new string[] {"OMG! Spreading this!"}},
-                    { PointVoiceGroup.Press, new string[] {"It'll be my cover!!"}}
+					{ PointVoiceGroup.Normal, new string[] {"Nice one!", "Gotta tell someone!", "Wow :O", "OMG!", "I can’t believe it!", "NO WAY", "Mom MUST see this!", "Dad MUST see this!", "Dude!", "wut?" }},
+					{ PointVoiceGroup.Skeptical, new string[] {"Hm...", "Could it be...?", "It could be true..."}},
+					{ PointVoiceGroup.Believer, new string[] {"FOLLOW ME!", "REPOST!", "REPOSTING!", "THIS IS IMPORTANT", "THIS IS RELEVANT"}},
+					{ PointVoiceGroup.Press, new string[] {"It'll be my cover!!", "Front page material!", "Such a scoop!", "Stop the presses!", "Breaking News!", "Extra! Extra!"}},
+					{ PointVoiceGroup.Multiple, new string[] {"Wow :O", "OMG!", "I can’t believe it!", "NO WAY", "Gotta tell the guys!", "People should know this!", "Posting on family group!"}}
                 };
 
     public bool activated = false;
     public enum PointTypes { Point, Goal, SubGoal };
     public PointTypes Type;
-    public enum PointVoiceGroup { Normal, Skeptical, Believer, Press };
+	public enum PointVoiceGroup { Normal, Skeptical, Believer, Press, Multiple };
     public PointVoiceGroup Voice;
 
     public Sprite activeSprite;
