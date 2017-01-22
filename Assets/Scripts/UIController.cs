@@ -19,6 +19,12 @@ public class UIController : MonoBehaviour {
         SceneManager.LoadScene("Level1", LoadSceneMode.Single);
     }
 
+    public void StartLevel()
+    {
+        transform.Find("Start").gameObject.SetActive(false);
+        transform.Find("HUD").gameObject.SetActive(true);
+    }
+
     public void Advance()
     {
         var current = SceneManager.GetActiveScene().name;

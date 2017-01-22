@@ -27,8 +27,8 @@ public class ShieldHPBehaviour : MonoBehaviour {
 
 			shields.Add (instance);
 
-			this.gameObject.GetComponent<CircleCollider2D> ().radius += scaleValue;
-			Debug.Log ("create shield");
+            transform.Find("Base").gameObject.GetComponent<CircleCollider2D> ().radius += scaleValue;
+            Debug.Log ("create shield");
 		}
 	}
 	
