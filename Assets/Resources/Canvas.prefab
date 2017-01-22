@@ -112,7 +112,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1167254149913158
 GameObject:
   m_ObjectHideFlags: 1
@@ -249,7 +249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1296175131473124
 GameObject:
   m_ObjectHideFlags: 1
@@ -283,7 +283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1312850574885096
 GameObject:
   m_ObjectHideFlags: 1
@@ -420,7 +420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1500100976815986
 GameObject:
   m_ObjectHideFlags: 1
@@ -655,6 +655,7 @@ GameObject:
   - component: {fileID: 4563829210082620}
   - component: {fileID: 114588380204919890}
   - component: {fileID: 114437660887623232}
+  - component: {fileID: 114212271326275536}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -678,7 +679,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1820263061836938
 GameObject:
   m_ObjectHideFlags: 1
@@ -966,7 +967,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '- Level 1 -'
+  m_Text: '- Level 01 -'
 --- !u!114 &114135334688760856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1147,6 +1148,17 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'Spread the News:'
+--- !u!114 &114212271326275536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1750952446415298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1327945023, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114226460848969190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1988,7 +2000,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\"Sia found captive at Beyonc\xE9's basement!\""
+  m_Text: '"Azealia Banks Is Actually White"'
 --- !u!114 &114738603916577858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2134,7 +2146,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114786837439929104}
         m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
@@ -2290,9 +2302,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Try Again
-
-'
+  m_Text: Try Again
 --- !u!114 &114837907792068398
 MonoBehaviour:
   m_ObjectHideFlags: 1
