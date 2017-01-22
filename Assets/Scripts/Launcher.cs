@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Launcher : MonoBehaviour {
 
@@ -46,6 +47,7 @@ public class Launcher : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
+        if (EventSystem.current.IsPointerOverGameObject()) return;
         if (enabled && point.activated && point.Ammo > 0) {
             launch();
             point.Ammo -= 1;
