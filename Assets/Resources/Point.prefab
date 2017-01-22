@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileAngles: 00000000
-  aimDistance: 1.5
+  aimDistance: 1.7
   angularSpeed: 2
 --- !u!114 &114538403697907560
 MonoBehaviour:
