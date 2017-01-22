@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour {
 	float pRange;
 	float pAngle;
-	float pSpeed = 0.1f;
+	float pSpeed = 0.2f;
 
 	Vector3 dir;
 
