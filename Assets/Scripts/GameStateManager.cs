@@ -27,7 +27,7 @@ public class GameStateManager : MonoBehaviour
         endGame = GetComponent<EndGameBehavior>();
     }
 
-    public void Update()
+    public void UpdateGameState()
     {
         bool allGoals = true;
         bool hasAmmo = false;

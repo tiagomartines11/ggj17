@@ -35,7 +35,9 @@ public class Projectile : MonoBehaviour {
 		if (this.transform.localPosition.magnitude >= pRange) {
 			Debug.Log (this.transform.localPosition.magnitude);
 			GameObject.Destroy (gameObject);
-		}
+            GameObject.FindObjectOfType<GameStateManager>().UpdateGameState();
+
+        }
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
@@ -45,10 +47,12 @@ public class Projectile : MonoBehaviour {
         {
             GameObject.Destroy(gameObject);
             collision.transform.parent.gameObject.GetComponent<PointBehaviour>().activate();
+            GameObject.FindObjectOfType<GameStateManager>().UpdateGameState();
         }
         if (collision.gameObject.layer == LayerMask.NameToLayer("Shield"))
         {
             GameObject.Destroy(gameObject);
+            GameObject.FindObjectOfType<GameStateManager>().UpdateGameState();
         }
     }
 }
