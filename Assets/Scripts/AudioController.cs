@@ -21,7 +21,7 @@ public class AudioController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		fxSound = GetComponent<AudioSource> ();
-		fxSound.PlayOneShot (bgm);
+		//fxSound.PlayOneShot (bgm);
 	}
 
 	public void playButton()
