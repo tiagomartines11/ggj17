@@ -238,7 +238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activated: 0
   Type: 0
-  Voice: 0
+  Voice: 2
   activeSprite: {fileID: 21300000, guid: 4282da603e37ba64b8ba3d2a8f4bd0e0, type: 3}
   ChainReaction: 1
   _Ammo: 1
