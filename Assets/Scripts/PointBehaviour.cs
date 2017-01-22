@@ -40,15 +40,9 @@ public class PointBehaviour : MonoBehaviour
         ammoLabel = GetComponentInChildren<Text>();
         Ammo = _Ammo;
 
-        if (!activated)
-        {
-            if (ammoLabel) ammoLabel.enabled = false;
-        }
-        else {
+        if (activated)
             activate();
-        }
     }
-
 
 
     public void activate()
@@ -66,7 +60,7 @@ public class PointBehaviour : MonoBehaviour
 
 		activated = true;
 
-		if (ammoLabel) ammoLabel.enabled = true;
+		if (ammoLabel) ammoLabel.color = Color.white;
 
         if (gameObject.GetComponent<Launcher>()) gameObject.GetComponent<Launcher>().enabled = true;
         if (gameObject.GetComponent<RangeBehaviour>()) gameObject.GetComponent<RangeBehaviour>().enabled = true;

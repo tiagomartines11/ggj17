@@ -16,7 +16,8 @@ public class EndGameBehavior : MonoBehaviour {
         which.Find("goalScore").GetComponent<Text>().text = goalScore.ToString();
         which.Find("subGoalScore").GetComponent<Text>().text = subGoalScore.ToString();
         which.gameObject.SetActive(true);
-	}
+        gameObject.transform.Find("HUD").gameObject.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update () {
