@@ -41,10 +41,10 @@ public class Projectile : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Eletron") && collision.transform.parent.gameObject.layer != transform.parent.gameObject.layer)
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Eletron") && collision.transform.parent.gameObject != transform.parent.gameObject)
         {
             GameObject.Destroy(gameObject);
-            collision.gameObject.GetComponent<PointBehaviour>().activate();
+            collision.transform.parent.gameObject.GetComponent<PointBehaviour>().activate();
         }
         if (collision.gameObject.layer == LayerMask.NameToLayer("Shield"))
         {
