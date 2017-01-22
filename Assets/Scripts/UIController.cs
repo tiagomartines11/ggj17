@@ -65,9 +65,15 @@ public class UIController : MonoBehaviour
 
     }
 
+    public void ShowIntro()
+    {
+        if (audioController) audioController.playButton();
+        SceneManager.LoadScene("GOSSIP", LoadSceneMode.Single);
+    }
+
     public void StartGame()
     {
-		if (audioController) audioController.playButton ();
+        if (audioController) audioController.playButton();
         SceneManager.LoadScene("Level 1", LoadSceneMode.Single);
     }
 
