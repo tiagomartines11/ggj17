@@ -7,9 +7,9 @@ public class PointBehaviour : MonoBehaviour
 {
     static Dictionary<PointVoiceGroup, string[]> voices = new Dictionary<PointVoiceGroup, string[]>()
                 {
-					{ PointVoiceGroup.Normal, new string[] {"Nice one!", "Gotta tell someone!", "Wow :O", "OMG!", "I can’t believe it!", "NO WAY", "Mom MUST see this!", "Dad MUST see this!", "Dude!", "wut?" }},
+					{ PointVoiceGroup.Normal, new string[] {"Completely shocked!", "Gotta tell someone!", "Wow :O", "omg!", "I knew it!", "I can’t believe it!", "No way!", "Mom MUST see this!", "Dad MUST see this!", "Dude!", "wut?" }},
 					{ PointVoiceGroup.Skeptical, new string[] {"Hm...", "Could it be...?", "It could be true..."}},
-					{ PointVoiceGroup.Believer, new string[] {"FOLLOW ME!", "REPOST!", "REPOSTING!", "THIS IS IMPORTANT", "THIS IS RELEVANT"}},
+					{ PointVoiceGroup.Believer, new string[] {"REPOST!", "REPOSTING!", "THIS IS IMPORTANT", "THIS IS RELEVANT", "PLEASE READ THIS!"}},
 					{ PointVoiceGroup.Press, new string[] {"It'll be my cover!!", "Front page material!", "Such a scoop!", "Stop the presses!", "Breaking News!", "Extra! Extra!"}},
 					{ PointVoiceGroup.Multiple, new string[] {"Wow :O", "OMG!", "I can’t believe it!", "NO WAY", "Gotta tell the guys!", "People should know this!", "Posting on family group!"}}
                 };
