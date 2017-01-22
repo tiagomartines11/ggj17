@@ -218,7 +218,7 @@ Prefab:
     - target: {fileID: 114017826060821682, guid: 9d9b63e23de064dd789fe6a85789fb5d,
         type: 2}
       propertyPath: _Ammo
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114017826060821682, guid: 9d9b63e23de064dd789fe6a85789fb5d,
         type: 2}
@@ -426,17 +426,17 @@ Prefab:
     - target: {fileID: 114676987552089860, guid: 641871c21feba4d088a1f39f858d6a42,
         type: 2}
       propertyPath: shieldAngles.Array.data[1]
-      value: 180
+      value: 315
       objectReference: {fileID: 0}
     - target: {fileID: 114676987552089860, guid: 641871c21feba4d088a1f39f858d6a42,
         type: 2}
       propertyPath: shieldAngles.Array.data[0]
-      value: 0
+      value: 135
       objectReference: {fileID: 0}
     - target: {fileID: 114676987552089860, guid: 641871c21feba4d088a1f39f858d6a42,
         type: 2}
       propertyPath: angularSpeed
-      value: -1.5
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 641871c21feba4d088a1f39f858d6a42, type: 2}
@@ -597,7 +597,7 @@ Prefab:
     - target: {fileID: 114017826060821682, guid: 9d9b63e23de064dd789fe6a85789fb5d,
         type: 2}
       propertyPath: _Ammo
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d9b63e23de064dd789fe6a85789fb5d, type: 2}
@@ -841,7 +841,7 @@ Prefab:
     - target: {fileID: 114535472519520342, guid: 9d9b63e23de064dd789fe6a85789fb5d,
         type: 2}
       propertyPath: projectileAngles.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4527304167851488, guid: 9d9b63e23de064dd789fe6a85789fb5d, type: 2}
       propertyPath: m_LocalPosition.x
@@ -887,12 +887,12 @@ Prefab:
     - target: {fileID: 114017826060821682, guid: 9d9b63e23de064dd789fe6a85789fb5d,
         type: 2}
       propertyPath: _Ammo
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114535472519520342, guid: 9d9b63e23de064dd789fe6a85789fb5d,
         type: 2}
       propertyPath: projectileAngles.Array.data[0]
-      value: 115
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114535472519520342, guid: 9d9b63e23de064dd789fe6a85789fb5d,
         type: 2}
@@ -958,12 +958,17 @@ Prefab:
     - target: {fileID: 114676987552089860, guid: 641871c21feba4d088a1f39f858d6a42,
         type: 2}
       propertyPath: shieldAngles.Array.data[1]
-      value: 180
+      value: 225
       objectReference: {fileID: 0}
     - target: {fileID: 114676987552089860, guid: 641871c21feba4d088a1f39f858d6a42,
         type: 2}
       propertyPath: shieldAngles.Array.data[0]
-      value: 0
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114676987552089860, guid: 641871c21feba4d088a1f39f858d6a42,
+        type: 2}
+      propertyPath: angularSpeed
+      value: -1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 641871c21feba4d088a1f39f858d6a42, type: 2}
@@ -1044,6 +1049,11 @@ Prefab:
       propertyPath: numShields
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114676987552089860, guid: 641871c21feba4d088a1f39f858d6a42,
+        type: 2}
+      propertyPath: shieldAngles.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 641871c21feba4d088a1f39f858d6a42, type: 2}
   m_IsPrefabParent: 0
@@ -1096,7 +1106,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0

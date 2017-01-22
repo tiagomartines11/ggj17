@@ -303,6 +303,16 @@ Prefab:
       propertyPath: activated
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114535472519520342, guid: 9d9b63e23de064dd789fe6a85789fb5d,
+        type: 2}
+      propertyPath: angularSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114535472519520342, guid: 9d9b63e23de064dd789fe6a85789fb5d,
+        type: 2}
+      propertyPath: projectileAngles.Array.data[0]
+      value: 315
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d9b63e23de064dd789fe6a85789fb5d, type: 2}
   m_IsPrefabParent: 0
@@ -428,12 +438,12 @@ Prefab:
     - target: {fileID: 114149989840331822, guid: c1cd8f428a696d14eb0190cfe49806e1,
         type: 2}
       propertyPath: shieldAngles.Array.data[1]
-      value: 180
+      value: 315
       objectReference: {fileID: 0}
     - target: {fileID: 114149989840331822, guid: c1cd8f428a696d14eb0190cfe49806e1,
         type: 2}
       propertyPath: shieldAngles.Array.data[0]
-      value: 0
+      value: 135
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1cd8f428a696d14eb0190cfe49806e1, type: 2}
@@ -484,7 +494,7 @@ Prefab:
     - target: {fileID: 114017826060821682, guid: 9d9b63e23de064dd789fe6a85789fb5d,
         type: 2}
       propertyPath: _Ammo
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114017826060821682, guid: 9d9b63e23de064dd789fe6a85789fb5d,
         type: 2}
@@ -759,7 +769,7 @@ Prefab:
     - target: {fileID: 114017826060821682, guid: 9d9b63e23de064dd789fe6a85789fb5d,
         type: 2}
       propertyPath: _Ammo
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114017826060821682, guid: 9d9b63e23de064dd789fe6a85789fb5d,
         type: 2}
@@ -816,12 +826,12 @@ Prefab:
     - target: {fileID: 114149989840331822, guid: c1cd8f428a696d14eb0190cfe49806e1,
         type: 2}
       propertyPath: shieldAngles.Array.data[1]
-      value: 180
+      value: 315
       objectReference: {fileID: 0}
     - target: {fileID: 114149989840331822, guid: c1cd8f428a696d14eb0190cfe49806e1,
         type: 2}
       propertyPath: shieldAngles.Array.data[0]
-      value: 0
+      value: 135
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1cd8f428a696d14eb0190cfe49806e1, type: 2}
@@ -1082,6 +1092,16 @@ Prefab:
         type: 2}
       propertyPath: activated
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114535472519520342, guid: 9d9b63e23de064dd789fe6a85789fb5d,
+        type: 2}
+      propertyPath: angularSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114535472519520342, guid: 9d9b63e23de064dd789fe6a85789fb5d,
+        type: 2}
+      propertyPath: projectileAngles.Array.data[0]
+      value: 135
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d9b63e23de064dd789fe6a85789fb5d, type: 2}
