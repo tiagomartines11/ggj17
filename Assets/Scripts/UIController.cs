@@ -67,20 +67,20 @@ public class UIController : MonoBehaviour
 
     public void StartGame()
     {
-		audioController.playButton ();
+		if (audioController) audioController.playButton ();
         SceneManager.LoadScene("Level 1", LoadSceneMode.Single);
     }
 
     public void StartLevel()
     {
-		audioController.playButton ();
+        if (audioController) audioController.playButton ();
         transform.Find("Start").gameObject.SetActive(false);
         transform.Find("HUD").gameObject.SetActive(true);
     }
 
     public void Advance()
     {
-		audioController.playButton ();
+        if (audioController) audioController.playButton ();
         var current = SceneManager.GetActiveScene().name;
         int currentId = System.Int32.Parse(current.Replace("Level", ""));
         currentId++;
@@ -92,7 +92,7 @@ public class UIController : MonoBehaviour
 
     public void Restart()
     {
-		audioController.playButton ();
+        if (audioController) audioController.playButton ();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         PlayerPrefs.DeleteKey("curStory");
         PlayerPrefs.Save();

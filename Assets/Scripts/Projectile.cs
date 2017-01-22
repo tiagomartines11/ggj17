@@ -52,7 +52,7 @@ public class Projectile : MonoBehaviour {
         }
         if (collision.gameObject.layer == LayerMask.NameToLayer("Shield"))
         {
-			audioController.playShieldDestroy ();
+            if (audioController) audioController.playShieldDestroy ();
             GameObject.Destroy(gameObject);
             GameObject.FindObjectOfType<GameStateManager>().UpdateGameState();
         }

@@ -66,28 +66,34 @@ public class PointBehaviour : MonoBehaviour
 
     public void activate()
     {
-		///check if shields
-		ShieldHPBehaviour shields = gameObject.GetComponent<ShieldHPBehaviour> ();
+        ///check if shields
+        ShieldHPBehaviour shields = gameObject.GetComponent<ShieldHPBehaviour>();
 
-		if (shields && shields.activeShields > 0) 
-		{
-			//Debug.Log ("i have shields!");
-			shields.disableShield ();
-			audioController.playShieldHit ();
-			return;
-		}
+        if (shields && shields.activeShields > 0)
+        {
+            //Debug.Log ("i have shields!");
+            shields.disableShield();
+            if (audioController) audioController.playShieldHit();
+            return;
+        }
 
-		activated = true;
+        activated = true;
 
-		if (Type == PointTypes.Goal)
-			audioController.playGoal ();
-		else if(Type == PointTypes.Point)
-			audioController.playScore();
-		else if(Type == PointTypes.SubGoal)
-			audioController.playStar();
+        if (Type == PointTypes.Goal)
+        {
+            if (audioController) audioController.playGoal();
+        }
+        else if (Type == PointTypes.Point)
+        {
+            if (audioController) audioController.playScore();
+        }
+        else if (Type == PointTypes.SubGoal)
+        {
+            if (audioController) audioController.playStar();
+        }
 
 
-		if (ammoLabel) ammoLabel.color = Color.white;
+        if (ammoLabel) ammoLabel.color = Color.white;
 
         if (gameObject.GetComponent<Launcher>()) gameObject.GetComponent<Launcher>().enabled = true;
         if (gameObject.GetComponent<RangeBehaviour>()) gameObject.GetComponent<RangeBehaviour>().enabled = true;
