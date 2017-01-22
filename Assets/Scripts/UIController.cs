@@ -106,5 +106,13 @@ public class UIController : MonoBehaviour
         which.Find("subGoalScore").GetComponent<Text>().text = subGoalScore.ToString();
         which.gameObject.SetActive(true);
         gameObject.transform.Find("HUD").gameObject.SetActive(false);
+
+		if (isWin) {
+			GameObject article = which.Find("articleWin").gameObject;
+
+			Sprite newArticle = Resources.Load<Sprite>(histories[PlayerPrefs.GetInt("curStory", 0)]);
+
+			article.GetComponent<Image> ().overrideSprite = newArticle;
+		}
     }
 }
