@@ -13,7 +13,7 @@ public class PointBehaviour : MonoBehaviour
     [SerializeField]
     private int _Ammo = 3;
     [SerializeField]
-    private int _Range = 3;
+    private float _Range = 3;
 
     public int Ammo
     {
@@ -26,7 +26,7 @@ public class PointBehaviour : MonoBehaviour
         }
     }
 
-    public int Range
+    public float Range
     {
         get { return _Range; }
         set { _Range = value; }

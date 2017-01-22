@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShieldHPBehaviour : MonoBehaviour {
 
 	public int numShields;
+    [HideInInspector]
 	public int activeShields;
 	float scaleValue = 0.2f;
 
