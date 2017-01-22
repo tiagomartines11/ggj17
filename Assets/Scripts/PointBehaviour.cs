@@ -56,7 +56,7 @@ public class PointBehaviour : MonoBehaviour
 		///check if shields
 		ShieldHPBehaviour shields = gameObject.GetComponent<ShieldHPBehaviour> ();
 
-		if (shields.activeShields > 0) 
+		if (shields && shields.activeShields > 0) 
 		{
 			Debug.Log ("i have shields!");
 			shields.disableShield ();
@@ -67,12 +67,12 @@ public class PointBehaviour : MonoBehaviour
 
 		activated = true;
 
-		ammoLabel.enabled = true;
+		if (ammoLabel) ammoLabel.enabled = true;
 
-        gameObject.GetComponent<Launcher>().enabled = true;
-        gameObject.GetComponent<RangeBehaviour>().enabled = true;
-        gameObject.GetComponent<ShieldBehaviour>().enabled = false;
-		gameObject.GetComponent<ShieldHPBehaviour>().enabled = false;
+        if (gameObject.GetComponent<Launcher>()) gameObject.GetComponent<Launcher>().enabled = true;
+        if (gameObject.GetComponent<RangeBehaviour>()) gameObject.GetComponent<RangeBehaviour>().enabled = true;
+        if (gameObject.GetComponent<ShieldBehaviour>()) gameObject.GetComponent<ShieldBehaviour>().enabled = false;
+		if (gameObject.GetComponent<ShieldHPBehaviour>()) gameObject.GetComponent<ShieldHPBehaviour>().enabled = false;
 
 		GameObject baseObject = this.gameObject.transform.Find ("Base").gameObject;
 		baseObject.GetComponent<SpriteRenderer> ().sprite = activeSprite;
