@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
+	AudioController audioController;
+
     string[] flavors = new string[] {
         "Olsen Twins Aren't Twins",
         "Azealia Banks Is Actually White",
@@ -35,6 +37,8 @@ public class UIController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+		audioController = GameObject.FindObjectOfType<AudioController> ();
+
         if (transform.Find("Start"))
         {
             var labelLevel = transform.Find("Start").GetChild(0).Find("LevelLabel").GetComponent<Text>();
@@ -63,17 +67,20 @@ public class UIController : MonoBehaviour
 
     public void StartGame()
     {
+		audioController.playButton ();
         SceneManager.LoadScene("Level 1", LoadSceneMode.Single);
     }
 
     public void StartLevel()
     {
+		audioController.playButton ();
         transform.Find("Start").gameObject.SetActive(false);
         transform.Find("HUD").gameObject.SetActive(true);
     }
 
     public void Advance()
     {
+		audioController.playButton ();
         var current = SceneManager.GetActiveScene().name;
         int currentId = System.Int32.Parse(current.Replace("Level", ""));
         currentId++;
@@ -85,6 +92,7 @@ public class UIController : MonoBehaviour
 
     public void Restart()
     {
+		audioController.playButton ();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         PlayerPrefs.DeleteKey("curStory");
         PlayerPrefs.Save();

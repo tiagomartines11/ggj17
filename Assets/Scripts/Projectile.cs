@@ -6,13 +6,14 @@ public class Projectile : MonoBehaviour {
 	float pRange;
 	float pAngle;
 	float pSpeed = 0.2f;
+	AudioController audioController;
 
 	Vector3 dir;
 
 	// Use this for initialization
 	void Start () {
 		
-
+		audioController = GameObject.FindObjectOfType<AudioController> ();
 	}
 
 	public void SetupProjectile(float range, float angle)
@@ -51,6 +52,7 @@ public class Projectile : MonoBehaviour {
         }
         if (collision.gameObject.layer == LayerMask.NameToLayer("Shield"))
         {
+			audioController.playShieldDestroy ();
             GameObject.Destroy(gameObject);
             GameObject.FindObjectOfType<GameStateManager>().UpdateGameState();
         }

@@ -19,7 +19,7 @@ public class PointBehaviour : MonoBehaviour
     public PointTypes Type;
 	public enum PointVoiceGroup { Normal, Skeptical, Believer, Press, Multiple };
     public PointVoiceGroup Voice;
-
+	AudioController audioController;
     public Sprite activeSprite;
 
     [SerializeField]
@@ -49,6 +49,7 @@ public class PointBehaviour : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+		audioController = GameObject.FindObjectOfType<AudioController> ();
         ammoLabel = GetComponentInChildren<Text>();
         Ammo = _Ammo;
 
@@ -66,11 +67,19 @@ public class PointBehaviour : MonoBehaviour
 		{
 			//Debug.Log ("i have shields!");
 			shields.disableShield ();
-
+			audioController.playShieldHit ();
 			return;
 		}
 
 		activated = true;
+
+		if (Type == PointTypes.Goal)
+			audioController.playGoal ();
+		else if(Type == PointTypes.Point)
+			audioController.playScore();
+		else if(Type == PointTypes.SubGoal)
+			audioController.playStar();
+
 
 		if (ammoLabel) ammoLabel.color = Color.white;
 
