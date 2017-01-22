@@ -5,10 +5,21 @@ using UnityEngine.UI;
 
 public class PointBehaviour : MonoBehaviour
 {
-	public bool activated = false;
-	public enum PointTypes {Point, Goal, SubGoal};
-	public PointTypes Type;
-	public Sprite activeSprite;
+    static Dictionary<PointVoiceGroup, string[]> voices = new Dictionary<PointVoiceGroup, string[]>()
+                {
+                    { PointVoiceGroup.Normal, new string[] {"Nice one!", "HAHA!", "Wow :O"}},
+                    { PointVoiceGroup.Skeptical, new string[] {"Not a chance!", "You're kidding!"}},
+                    { PointVoiceGroup.Believer, new string[] {"OMG! Spreading this!"}},
+                    { PointVoiceGroup.Press, new string[] {"It'll be my cover!!"}}
+                };
+
+    public bool activated = false;
+    public enum PointTypes { Point, Goal, SubGoal };
+    public PointTypes Type;
+    public enum PointVoiceGroup { Normal, Skeptical, Believer, Press };
+    public PointVoiceGroup Voice;
+
+    public Sprite activeSprite;
 
     [SerializeField]
     private int _Ammo = 3;
@@ -65,9 +76,12 @@ public class PointBehaviour : MonoBehaviour
         if (gameObject.GetComponent<Launcher>()) gameObject.GetComponent<Launcher>().enabled = true;
         if (gameObject.GetComponent<RangeBehaviour>()) gameObject.GetComponent<RangeBehaviour>().enabled = true;
         if (gameObject.GetComponent<ShieldBehaviour>()) gameObject.GetComponent<ShieldBehaviour>().enabled = false;
-		if (gameObject.GetComponent<ShieldHPBehaviour>()) gameObject.GetComponent<ShieldHPBehaviour>().enabled = false;
+        if (gameObject.GetComponent<ShieldHPBehaviour>()) gameObject.GetComponent<ShieldHPBehaviour>().enabled = false;
 
-		GameObject baseObject = this.gameObject.transform.Find ("Base").gameObject;
+        var thisVoices = voices[Voice];
+        if (gameObject.GetComponent<PopupBehaviour>()) gameObject.GetComponent<PopupBehaviour>().Play(thisVoices[Random.Range(0, thisVoices.Length)]);
+
+        GameObject baseObject = this.gameObject.transform.Find ("Base").gameObject;
 		baseObject.GetComponent<SpriteRenderer> ().sprite = activeSprite;
 
         gameObject.transform.Find("Base").GetComponent<Collider2D>().enabled = false;

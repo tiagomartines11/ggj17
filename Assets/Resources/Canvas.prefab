@@ -298,7 +298,6 @@ GameObject:
   - component: {fileID: 114273233406289918}
   - component: {fileID: 114728493936283558}
   - component: {fileID: 114786837439929104}
-  - component: {fileID: 114633562161708508}
   - component: {fileID: 114789173291148444}
   m_Layer: 5
   m_Name: Canvas
@@ -1351,17 +1350,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114633562161708508
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1663778764522180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3da014b86bf0e4593a3b73d3f1081956, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114638818163569788
 MonoBehaviour:
   m_ObjectHideFlags: 1
